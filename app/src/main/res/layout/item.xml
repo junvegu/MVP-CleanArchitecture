@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="250dp">
+
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:textColor="#FFF"
+        android:background="#74000000"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="NOMBRE DE LA PERSONA"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+
+</RelativeLayout>
