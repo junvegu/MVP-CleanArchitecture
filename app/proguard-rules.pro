@@ -27,7 +27,7 @@
 
 -keep class android.support.test.espresso.IdlingResource { *; }
 -keep class com.google.common.base.Preconditions { *; }
-
+-keepclasseswithmembers public class android.support.v7.widget.RecyclerView { *; }
 # For Guava:
 -dontwarn javax.annotation.**
 -dontwarn javax.inject.**

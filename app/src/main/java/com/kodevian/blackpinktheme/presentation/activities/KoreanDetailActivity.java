@@ -2,6 +2,8 @@ package com.kodevian.blackpinktheme.presentation.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.VisibleForTesting;
+import android.support.test.espresso.IdlingResource;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
@@ -10,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.kodevian.blackpinktheme.R;
 import com.kodevian.blackpinktheme.base.BaseActivity;
 import com.kodevian.blackpinktheme.data.entities.KoreanGirlEntity;
+import com.kodevian.blackpinktheme.presentation.utils.EspressoIdlingResource;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -50,5 +53,11 @@ public class KoreanDetailActivity extends BaseActivity {
         onBackPressed();
         return true;
     }
+
+    @VisibleForTesting
+    public IdlingResource getCountingIdlingResource() {
+        return EspressoIdlingResource.getIdlingResource();
+    }
+
 
 }

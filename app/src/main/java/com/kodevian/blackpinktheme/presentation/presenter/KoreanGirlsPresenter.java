@@ -14,7 +14,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Created by Junior Quevedo on 06/10/17.
  */
 
-public class KoreanGirlsPresenter implements KoreanGirlContract.Presenter{
+public class KoreanGirlsPresenter implements KoreanGirlContract.Presenter {
 
     private final KoreanGirlContract.View mView;
     private final KoreanGirlsRepository mKoreanGirlsRepository;
@@ -29,14 +29,16 @@ public class KoreanGirlsPresenter implements KoreanGirlContract.Presenter{
 
     @Override
     public void start() {
-        loadKoreanGirls(false);
+
+        if (!mFirstLoad)
+            loadKoreanGirls(true);
     }
 
     @Override
     public void loadKoreanGirls(boolean forceUpdate) {
         // Simplification for sample: a network reload will be forced on first load.
         loadKoreanGirls(forceUpdate || mFirstLoad, true);
-        mFirstLoad = false;
+        mFirstLoad = true;
     }
 
     /**
@@ -101,7 +103,6 @@ public class KoreanGirlsPresenter implements KoreanGirlContract.Presenter{
             mView.getKoreanGirls(koreanGirlEntities);
         }
     }
-
 
 
     @Override

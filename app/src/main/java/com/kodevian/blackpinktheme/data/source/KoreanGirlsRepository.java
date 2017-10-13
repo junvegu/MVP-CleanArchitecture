@@ -79,7 +79,7 @@ public class KoreanGirlsRepository implements KoreanGirlDataSource {
         // Respond immediately with cache if available and not dirty
         if (mCachedKoreanGirls != null && !mCacheIsDirty) {
             callback.onKoreanGirlsLoaded(new ArrayList<>(mCachedKoreanGirls.values()));
-            return;
+            //return;
         }
 
         if (mCacheIsDirty) {
